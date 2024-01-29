@@ -1,1 +1,1 @@
-# cpp-rps-lizard-spock
+Trying this in C++ instead of C, because working with objects in C was a pain!
