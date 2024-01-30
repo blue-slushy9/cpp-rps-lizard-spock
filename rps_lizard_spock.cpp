@@ -18,7 +18,9 @@ purposes of this program; */
 // Declare our rules to the game, it is simple text that will print to the terminal;
 void rules();
 
-/* Declare the userInput function---return type of the function is std::string; 
+/* Declare the userInput function---return type of the function is std::string;
+std::string is a C++ Standard Library class that represents a sequence of characters
+as a dynamic array, providing a wide range of functionalities for string manipulation;
 const std::string& is a reference to the input prompt, which will not change; 
 in C++, & is a reference, which allows you to work with the original variable 
 without making a copy, but since prompt is a const it will not change anyway; */
@@ -29,6 +31,8 @@ std::string userInput(const std::string& prompt);
 int main() {
     // Call the rules function;
     rules();
+    // Call the userInput function;
+    userInput();
     return 0;
 }
 
@@ -46,6 +50,12 @@ void rules() {
 }
 
 // Define the userInput function;
+std::string userInput(const std::string& prompt) {
+
+}
+
+/* Old C code;
+// Define the userInput function;
 char* userInput(char* select) {
     // Print the prompt to the terminal;
     printf("Please enter your selection now: ");
@@ -55,6 +65,7 @@ char* userInput(char* select) {
     printf("Test: %s\n", select);
     // Return variable so that other functions can use it;
     //return select;
+*/
 
 
 /* #include <stdio.h>
