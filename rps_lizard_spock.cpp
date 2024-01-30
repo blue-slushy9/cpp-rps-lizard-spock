@@ -4,8 +4,9 @@
 i.e. operations on characters, in this case the std::tolower function
 for converting characters to lower-case; */
 #include <cctype>
-/* 
-*/
+/* string provides facilities for working with strings, e.g. functions and classes
+for string manipulation; in this case, we will use to scan the user input for any
+upper-case letters, and then convert them to lower-case; */
 #include <string>
 /* std::unordered_map is an unsorted associative container, which means that while its elements 
 consist of key-value pairs, they are not ordered based on the key as they would be in a std::map;
@@ -16,6 +17,13 @@ purposes of this program; */
 
 // Declare our rules to the game, it is simple text that will print to the terminal;
 void rules();
+
+/* Declare the userInput function---return type of the function is std::string, 
+const std::string& is a reference to the input prompt, which will not change; 
+in C++, & is a reference, which allows you to work with the original variable 
+without making a copy, but since prompt is a const it will not change anyway; */
+std::string userInput(const std::string& prompt);
+// char* userInput(char* select); // Old C code
 
 // main function will contain all other functions in this program;
 int main() {
@@ -33,8 +41,21 @@ void rules() {
 	   "simply quote him: 'Scissors cuts paper, paper covers rock,\n" 
 	   "rock crushes lizard, lizard poisons Spock, Spock smashes scissors,\n" 
 	   "scissors decapitates lizard, lizard eats paper, paper disproves Spock,\n" 
-	   "Spock vaporizes rock, and as it always has, rock crushes scissors!'\n\n") << std::endl;
+	   "Spock vaporizes rock, and as it always has, rock crushes scissors!'\n\n") 
+    << std::endl;
 }
+
+// Define the userInput function;
+char* userInput(char* select) {
+    // Print the prompt to the terminal;
+    printf("Please enter your selection now: ");
+    // Take user input as string, up to 9 characters;
+    scanf("%9s", select);
+    // FOR TESTING PURPOSES
+    printf("Test: %s\n", select);
+    // Return variable so that other functions can use it;
+    //return select;
+
 
 /* #include <stdio.h>
 // ctype.h contains tolower function, which converts all user-input text to
