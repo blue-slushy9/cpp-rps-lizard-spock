@@ -1,5 +1,12 @@
 // C++ Standard Library input/output stream;
 #include <iostream>
+/* cctype provides functions for character classification and conversion,
+i.e. operations on characters, in this case the std::tolower function
+for converting characters to lower-case; */
+#include <cctype>
+/* 
+*/
+#include <string>
 /* std::unordered_map is an unsorted associative container, which means that while its elements 
 consist of key-value pairs, they are not ordered based on the key as they would be in a std::map;
 the reason we use an unordered map is for simplicity and faster access speeds, the potential trade-offs
