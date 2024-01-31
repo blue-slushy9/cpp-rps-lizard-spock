@@ -50,8 +50,9 @@ void rules() {
 }
 
 // Define the userInput function;
-std::string userInput(const std::string& prompt) {
+std::string userInput(const std::string& prompt, const std:string& select) {
 
+    return select;
 }
 
 /* Old C code;
