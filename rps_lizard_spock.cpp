@@ -50,10 +50,35 @@ void rules() {
 }
 
 // Define the userInput function;
-std::string userInput(const std::string& prompt, const std:string& select) {
-
+std::string userInput(const std::string& prompt, const std::string& select) {
+    std::string select = userInput("Please enter your selection now: ");
     return select;
 }
+
+/* GPT CODE FOR AN INPUT FUNCTION;
+#include <iostream>
+#include <string>
+
+std::string userInput(const std::string& prompt);
+
+int main() {
+    std::string userSelection = userInput("Enter your selection: "); // "Enter your selection: " is our value
+    // 'cout' prints to console; << insertion operator sends data... // for the 'prompt' variable;
+    // ...to output stream; '<< userSelection' inserts the variable...
+    // ...data into the output stream; '<< std::endl' inserts newline character into output stream,
+    // it is also a manipulator that flushes the output buffer;
+    std::cout << "You entered: " << userSelection << std::endl;      
+
+    return 0;
+}
+
+std::string userInput(const std::string& prompt) {
+    std::string input;
+    std::cout << prompt;
+    std::getline(std::cin, input);
+    return input;
+}
+*/
 
 /* Old C code;
 // Define the userInput function;
