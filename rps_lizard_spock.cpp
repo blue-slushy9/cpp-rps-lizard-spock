@@ -18,21 +18,28 @@ purposes of this program; */
 // Declare our rules to the game, it is simple text that will print to the terminal;
 void rules();
 
-/* Declare the userInput function---return type of the function is std::string;
+/* Declare the userInputv1 function---return type of the function is std::string;
 std::string is a C++ Standard Library class that represents a sequence of characters
 as a dynamic array, providing a wide range of functionalities for string manipulation;
 const std::string& is a reference to the input prompt, which will not change; 
 in C++, & is a reference, which allows you to work with the original variable 
 without making a copy, but since prompt is a const it will not change anyway; */
-std::string userInput(const std::string& prompt);
+//std::string userInput(const std::string& prompt);
 // char* userInput(char* select); // Old C code
+
+// Declare the userInputv2 function;
+std::string userInput();
 
 // main function will contain all other functions in this program;
 int main() {
     // Call the rules function;
     rules();
+    // Assign output of userInput function to the variable, select, of type std::string;
+    std::string select = userInput();
+    // Print the user input;
+    std::cout << "You selected " << select << std::endl;
     // Call the userInput function;
-    userInput();
+    //userInput();
     return 0;
 }
 
@@ -48,6 +55,19 @@ void rules() {
 	   "Spock vaporizes rock, and as it always has, rock crushes scissors!'\n\n") 
     << std::endl;
 }
+
+// Define userInputv2 function;
+std::string userInput() {
+    // Create the variable that will store the user input;
+    std::string input;
+    std::cout << "Please enter your selection: ";
+    // 'std::cin' reads the user input and '>>' assigns it to the variable;
+    // please note that 'std::cin' stops reading at the first whitespace,
+    // however this should not be an issue in this program;
+    std::cin >> input;
+    return input;
+}
+
 /* Version 1 of userInput function;
 // Define the userInput function;
 std::string userInput(const std::string& prompt, const std::string& select) {
@@ -73,7 +93,7 @@ int main() {
     return 0;
 }
 
-// Define userInput function---please note additional definition will be needed in main();
+// Define userInputv1---please note additional definition will be needed in main();
 std::string userInput(const std::string& prompt) {
     std::string input;
     std::cout << prompt;
