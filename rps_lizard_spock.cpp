@@ -34,10 +34,14 @@ std::string userInput();
 int main() {
     // Call the rules function;
     rules();
+    
+    // USERINPUT FUNCTION BLOCK;
     // Assign output of userInput function to the variable, select, of type std::string;
     std::string select = userInput();
     // Print the user input;
     std::cout << "You selected " << select << std::endl;
+    // END USERINPUT FUNCTION BLOCK;
+
     // Call the userInput function;
     //userInput();
     return 0;
