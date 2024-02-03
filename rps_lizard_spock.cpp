@@ -48,12 +48,13 @@ void rules() {
 	   "Spock vaporizes rock, and as it always has, rock crushes scissors!'\n\n") 
     << std::endl;
 }
-
+/* Version 1 of userInput function;
 // Define the userInput function;
 std::string userInput(const std::string& prompt, const std::string& select) {
     std::string select = userInput("Please enter your selection now: ");
     return select;
 }
+*/
 
 /* GPT CODE FOR AN INPUT FUNCTION;
 #include <iostream>
@@ -72,6 +73,7 @@ int main() {
     return 0;
 }
 
+// Define userInput function---please note additional definition will be needed in main();
 std::string userInput(const std::string& prompt) {
     std::string input;
     std::cout << prompt;
