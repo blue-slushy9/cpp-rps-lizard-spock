@@ -30,6 +30,9 @@ without making a copy, but since prompt is a const it will not change anyway; */
 // Declare the userInputv2 function;
 std::string userInput();
 
+// Declare the toLower function;
+std::string toLower(const std::string& input);
+
 // main function will contain all other functions in this program;
 int main() {
     // Call the rules function;
@@ -41,6 +44,8 @@ int main() {
     // Print the user input;
     std::cout << "You selected " << select << std::endl;
     // END USERINPUT FUNCTION BLOCK;
+    
+    // 
 
     // Call the userInput function;
     //userInput();
@@ -69,7 +74,24 @@ std::string userInput() {
     // please note that 'std::cin' stops reading at the first whitespace,
     // however this should not be an issue in this program;
     std::cin >> input;
+
+    // Call the toLower() function with input as argument;
+    input = toLower(input);
     return input;
+}
+
+// Define the toLower function, which takes a 'str' as an argument;
+std::string toLower(const std::string& str) {
+    // Declare the variable that will store our altered string, 'str_lower';
+    std::string str_lower;
+    // Range-based for loop, iterates over each character 'c' in 'str';
+    // the range consists of all of the individual characters in 'str';
+    for (char c : str) {
+        // 'str_lower +=' means the result of each iteration of the C++ standard library
+        // 'tolower(c)' function gets appended to our new string, 'str_lower';
+        str_lower += tolower(c);
+    }
+    return str_lower;
 }
 
 /* Version 1 of userInput function;
