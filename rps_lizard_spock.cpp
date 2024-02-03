@@ -75,7 +75,7 @@ std::string userInput() {
     // however this should not be an issue in this program;
     std::cin >> input;
 
-    // Call the toLower() function with input as argument;
+    // Call the toLower() function with input as argument, assign output to existing variable;
     input = toLower(input);
     return input;
 }
