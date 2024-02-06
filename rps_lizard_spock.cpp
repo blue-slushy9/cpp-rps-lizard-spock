@@ -30,6 +30,9 @@ without making a copy, but since prompt is a const it will not change anyway; */
 // Declare the userInputv2 function;
 std::string userInput();
 
+// Declare the toUpper function;
+std::string toUpper(const std::String& input);
+
 // Declare the toLower function;
 std::string toLower(const std::string& input);
 
@@ -61,7 +64,7 @@ void rules() {
 	   "simply quote him: 'Scissors cuts paper, paper covers rock,\n" 
 	   "rock crushes lizard, lizard poisons Spock, Spock smashes scissors,\n" 
 	   "scissors decapitates lizard, lizard eats paper, paper disproves Spock,\n" 
-	   "Spock vaporizes rock, and as it always has, rock crushes scissors!'\n\n") 
+	   "Spock vaporizes rock, and as it always has, rock crushes scissors!'\n") 
     << std::endl;
 }
 
@@ -78,6 +81,21 @@ std::string userInput() {
     // Call the toLower() function with input as argument, assign output to existing variable;
     input = toLower(input);
     return input;
+}
+
+// Define the toUpper function, which takes a 'str' as an argument;
+std::string toLower(const std::string& str) {
+    // Declare the variable that will store our altered string, 'str_upper';
+    std::string str_upper;
+    // Range-based for loop, iterates over each character 'c' in 'str';
+    // the range consists of all of the individual characters in 'str';
+    for (char c : str) {
+        if str[0] 
+        // 'str_upper +=' means the result of each iteration of the C++ standard library
+        // 'toupper(c)' function gets appended to our new string, 'str_upper';
+        str_upper += toupper(c);
+    }
+    return str_upper;
 }
 
 // Define the toLower function, which takes a 'str' as an argument;
