@@ -36,6 +36,15 @@ std::string toUpper(const std::String& input);
 // Declare the toLower function;
 std::string toLower(const std::string& input);
 
+/* Declare our nested dictionary of all possible combinations and outcomes;
+'std::unordered_map' is the template from the Standard Template Library (STL);
+'std::string' specifies the type of keys in the outer map;
+'std::unordered_map' specifies there is another map inside of the outer map;
+'std::string' specifies the type of keys in the inner map;
+'std::string' specifies the type of values in the inner map;
+'rpslsDict' is the name of our nested dictionary; */
+std::unordered_map<std::string, <std::unordered_map<std::string, std::string>> rpslsDict;
+
 // main function will contain all other functions in this program;
 int main() {
     // Call the rules function;
@@ -44,6 +53,7 @@ int main() {
     // USERINPUT FUNCTION BLOCK;
     // Assign output of userInput function to the variable, select, of type std::string;
     std::string select = userInput();
+    // Update the select variable to store the re-formatted string ? ;
     // Print the user input;
     std::cout << "You selected " << select << std::endl;
     // END USERINPUT FUNCTION BLOCK;
@@ -77,6 +87,9 @@ std::string userInput() {
     // please note that 'std::cin' stops reading at the first whitespace,
     // however this should not be an issue in this program;
     std::cin >> input;
+    // If selection is Spock, ensure first letter in output is capitalized;
+    //if input == "spock"
+        //if (std::isupper(input[0]))  
 
     // Call the toLower() function with input as argument, assign output to existing variable;
     input = toLower(input);
@@ -90,7 +103,7 @@ std::string toLower(const std::string& str) {
     // Range-based for loop, iterates over each character 'c' in 'str';
     // the range consists of all of the individual characters in 'str';
     for (char c : str) {
-        if str[0] 
+        //if str[0]
         // 'str_upper +=' means the result of each iteration of the C++ standard library
         // 'toupper(c)' function gets appended to our new string, 'str_upper';
         str_upper += toupper(c);
